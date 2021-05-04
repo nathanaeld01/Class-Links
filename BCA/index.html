@@ -20,6 +20,16 @@
         <script type="text/javascript" src="../script.js"></script>
         <script src='../jquery.p2r.min.js' type='text/javascript' defer></script>
         <!--- P2R --->
+
+        <script type="text/javascript">
+            $(document).ready(function (){
+                $(".container").pullToRefresh({
+                    refresh:200
+                }).on("refresh.pulltorefresh", function (){
+                    location.reload();
+                });
+            });
+        </script>
     </head>
     <body>
         <div class="container">
@@ -103,14 +113,5 @@
                 <div class="status"></div>
             </div>
         </div>
-        <script type="text/javascript">
-            $(document).ready(function (){
-                $(".container").pullToRefresh({
-                    refresh:200
-                }).on("refresh.pulltorefresh", function (){
-                    location.reload();
-                });
-            });
-        </script>
     </body>
 </html>
