@@ -1,0 +1,116 @@
+html, body {
+    height: 100%;
+}
+body {
+    background: url('bg.jpg');
+    background-size: auto;
+    background-position: center center;
+    background-repeat: no-repeat;
+    margin: 0px;
+    width: 100%;
+}
+.container {
+    width: 100%;
+    height: 100%;
+    transform: translateY(0px) !important;
+}
+.wrap {
+    width: 100%;
+}
+table {
+    border: 0px;
+}
+a, a:hover, a:visited {
+    text-decoration: none;
+    color: black;
+}
+table th {
+    background-color: #fae4bd;
+}
+table td {
+    min-width: 70px;
+    min-height: 36px;
+    max-height: 36px;
+    width: 90px;
+    height: 36px;
+    text-align: center;
+}
+table tr td {
+    background-color: #fff4e0;
+}
+.time-table {
+    width: max-content;
+    margin: 0 auto;
+}
+.time-table .head-pane table {
+    width: 100%;
+}
+.time-table .scroll, .time-table .head-pane {
+    border: 1px solid #363636;
+}
+.time-table .head-pane {
+    margin-top: 50px !important;
+    border-bottom: 0px;
+}
+.time-table .scroll {
+    border-top: 0px;
+}
+.active a, .active a:hover, .active a:visited {
+    text-decoration: none;
+    color: #0000EE;
+}
+.booting a, .booting a:hover, .booting a:visited {
+    text-decoration: none;
+    color: #ff58eb;
+}
+td.active {
+    background-color: #a7e1a7 !important;
+}
+td.booting {
+    background-color: #b6deff !important;
+}
+.status {
+    text-align: center;
+    font-size: 23px;
+    font-family: monospace, sans-serif;
+    margin-top: 50px;
+    color: white;
+}
+@media screen and (max-width: 426px) {
+    body {
+        height: 100vh;
+        margin: 0px;
+        width: 100vw;
+        overflow: hidden;
+        background: url('bg.jpg');
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+    }
+    .container {
+        width: 100vw;
+        height: 100vh;
+    }
+    .wrap {
+        width: 90%;
+        margin: 0 auto;
+    }
+    .time-table {
+        width: 100%;
+        font-size: .75em;
+    }
+    .time-table .head-pane {
+        margin-top: 50px !important;
+    }
+    .time-table .scroll {
+        overflow-x: scroll;
+    }
+    .time-table table td, .time-table table th {
+        min-width: 65px;
+        max-width: 65px;
+        width: 100%;
+    }
+    .status {
+        width: 100vw;
+    }
+}
