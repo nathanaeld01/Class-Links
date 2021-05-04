@@ -8,6 +8,7 @@ body {
     background-repeat: no-repeat;
     margin: 0px;
     width: 100%;
+    overflow: hidden;
 }
 .container {
     width: 100%;
