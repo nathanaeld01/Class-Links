@@ -103,7 +103,7 @@ td.booting {
         font-size: .75em;
     }
     .time-table .head-pane {
-        margin-top: 100px !important;
+        margin-top: 50px !important;
     }
     .time-table .scroll {
         overflow-x: scroll;
