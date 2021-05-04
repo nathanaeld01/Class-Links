@@ -9,6 +9,7 @@ body {
     margin: 0px;
     width: 100%;
     overflow: hidden;
+    overscroll-behavior-y: auto;
 }
 .container {
     width: 100%;
