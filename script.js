@@ -57,9 +57,10 @@ $(document).ready(function() {
                             var rem = 480 - timeMin;
                             injectStatus("<span>Classes starts in " + rem + " mins! #lazyForLife</span>");
                         }
-                        else if(j==5 && k==0) {
+                        /** else if(j==5 && k==0) {
 
                         }
+                        **/
                         else {
                             injectStatus("<span>Break Period. #haveMercyOnUs</span>");
                             $('tr').each(function() {
