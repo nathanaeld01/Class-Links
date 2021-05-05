@@ -43,7 +43,7 @@ $(document).ready(function() {
         /*** Checking Time and Updating the Table ***/
         for(i = 1; i < 6; i++) {
             if(i == day) {
-                for(j = 0; j < 6; j++) {
+                for(j = 0; j < 7; j++) {
                     if(currTime >= period[j][k] && currTime <= period[j][k+1]) {
                         $('tr').each(function() {
                             $(this).find('td.booting').removeClass('booting');
