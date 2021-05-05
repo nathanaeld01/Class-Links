@@ -61,6 +61,11 @@ button:hover {
     margin-top: 3px;
     transition: .2s;
 }
+@media screen and (max-width: 992px) {
+    .wrap {
+        width: 60%;
+    }
+}
 @media screen and (max-width: 426px) {
     .wrap {
         width: 92.5%;
@@ -80,10 +85,5 @@ button:hover {
     button:hover {
         margin-top: 13px;
         margin-bottom: 7px;
-    }
-}
-@media screen and (max-width: 992px) {
-    .wrap {
-        width: 60%;
     }
 }
