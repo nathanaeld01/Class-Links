@@ -57,7 +57,7 @@ $(document).ready(function() {
                             var rem = 480 - timeMin;
                             injectStatus("<span>Classes starts in " + rem + " mins! #lazyForLife</span>");
                         }
-                        else if(j==5 && (k==0 || k==1) {
+                        else if(j==5 && (k==0 || k==1)) {
 
                         }
                         else {
