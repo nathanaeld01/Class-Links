@@ -80,13 +80,7 @@ td.booting {
 @media screen and (max-width: 426px) {
     body {
         height: 100vh;
-        margin: 0px;
         width: 100vw;
-        overflow: hidden;
-        background: url('bg.jpg');
-        background-size: cover;
-        background-position: center center;
-        background-repeat: no-repeat;
     }
     .container {
         width: 100vw;
