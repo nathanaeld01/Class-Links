@@ -14,7 +14,7 @@ $(document).ready(function() {
     function checkTable() {
         var date = new Date();
         var currTime = (date.getHours() * 60 + date.getMinutes()) * 60 + date.getSeconds();
-        var period = [[28800, 31200], [32400, 34800], [36000, 38400], [39600, 42000], [43200, 45600], [45601, 48000]];
+        var period = [[28800, 31200], [32400, 34800], [36000, 38400], [39600, 42000], [43200, 45600], [50400, 52800]];
         var day = date.getDay();
 
         function injectStatus(statusText) {
@@ -65,8 +65,8 @@ $(document).ready(function() {
                             $('tr').each(function() {
                                 $(this).find('td.active').removeClass('active');
                             });
-                            $('.day').eq(day-1).children('td').eq(j).addClass('booting');
                         }
+                        $('.day').eq(day-1).children('td').eq(j).addClass('booting');
                     }
                 }
             }
