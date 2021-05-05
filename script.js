@@ -14,7 +14,7 @@ $(document).ready(function() {
     function checkTable() {
         var date = new Date();
         var currTime = (date.getHours() * 60 + date.getMinutes()) * 60 + date.getSeconds();
-        var period = [[28800, 31200], [32400, 34800], [36000, 38400], [39600, 42000], [43200, 45600], [45600, 48000], [50400, 52800]];
+        var period = [[28800, 31200], [32400, 34800], [36000, 38400], [39600, 42000], [43200, 45600], [50400, 52800]];
         var day = date.getDay();
 
         function injectStatus(statusText) {
@@ -43,12 +43,17 @@ $(document).ready(function() {
         /*** Checking Time and Updating the Table ***/
         for(i = 1; i < 6; i++) {
             if(i == day) {
-                for(j = 0; j < 7; j++) {
+                for(j = 0; j < 6; j++) {
                     if(currTime >= period[j][k] && currTime <= period[j][k+1]) {
                         $('tr').each(function() {
                             $(this).find('td.booting').removeClass('booting');
                         });
-                        $('.day').eq(day-1).children('td').eq(j).addClass('active');
+                        if(j==5) {
+                            $('.day').eq(0).children('td').eq(5).addClass('booting');
+                        }
+                        else {
+                            $('.day').eq(day-1).children('td').eq(j).addClass('active');
+                        }
                         injectStatus("<span>Class is going on! #sleepWell</span>");
                     }
                     else if(currTime >= period[j][k]-1200 && currTime <= period[j][k]) {
@@ -57,7 +62,7 @@ $(document).ready(function() {
                             var rem = 480 - timeMin;
                             injectStatus("<span>Classes starts in " + rem + " mins! #lazyForLife</span>");
                         }
-                        else if(j==5 && (k==0 || k==1)) {
+                        if(j==5 && (k==0 || k==1)) {
 
                         }
                         else {
