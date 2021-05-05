@@ -22,7 +22,7 @@ $(document).ready(function() {
         }
 
         /*** Week-End OR Classes Ended ***/
-        if(currTime > period[6][1]) {
+        if(currTime > period[5][1]) {
             if(day == 0) {
                 injectStatus("<span>Weekend! #godHeardUs</span>");
                 clearInterval(checking);
@@ -48,12 +48,7 @@ $(document).ready(function() {
                         $('tr').each(function() {
                             $(this).find('td.booting').removeClass('booting');
                         });
-                        if(j==5) {
-                            $('.day').eq(0).children('td').eq(5).addClass('booting');
-                        }
-                        else {
-                            $('.day').eq(day-1).children('td').eq(j).addClass('active');
-                        }
+                        $('.day').eq(day-1).children('td').eq(j).addClass('active');
                         injectStatus("<span>Class is going on! #sleepWell</span>");
                     }
                     else if(currTime >= period[j][k]-1200 && currTime <= period[j][k]) {

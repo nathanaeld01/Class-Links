@@ -20,14 +20,19 @@
         <script type="text/javascript" src="../script.js"></script>
         <script src='../jquery.p2r.min.js' type='text/javascript' defer></script>
         <!--- P2R --->
+        <script src="../ptrLight.min.js"></script>
         <script type="text/javascript">
-            $(document).ready(function (){
-                $(".container").pullToRefresh({
-                    refresh:200
-                }).on("refresh.pulltorefresh", function (){
-                    location.reload();
-                });
+        $(function() {
+            $('#content').ptrLight({
+                'refresh': function(ptrLightInstance) {
+                    setTimeout(function() {
+                        ptrLightInstance.done();
+                    }, 2000);
+                },
+                pullThreshold: $(window).height() * 0.5,
+                maxPullThreshold: $(window).height()
             });
+        });
         </script>
     </head>
     <body>
