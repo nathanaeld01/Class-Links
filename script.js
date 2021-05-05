@@ -14,7 +14,7 @@ $(document).ready(function() {
     function checkTable() {
         var date = new Date();
         var currTime = (date.getHours() * 60 + date.getMinutes()) * 60 + date.getSeconds();
-        var period = [[28800, 31200], [32400, 34800], [36000, 38400], [39600, 42000], [43200, 45600], [50400, 52800]];
+        var period = [[28800, 31200], [32400, 34800], [36000, 38400], [39600, 42000], [43200, 45600], [45600, 48000], [50400, 52800]];
         var day = date.getDay();
 
         function injectStatus(statusText) {
@@ -22,7 +22,7 @@ $(document).ready(function() {
         }
 
         /*** Week-End OR Classes Ended ***/
-        if(currTime > period[5][1]) {
+        if(currTime > period[6][1]) {
             if(day == 0) {
                 injectStatus("<span>Weekend! #godHeardUs</span>");
                 clearInterval(checking);
@@ -57,10 +57,9 @@ $(document).ready(function() {
                             var rem = 480 - timeMin;
                             injectStatus("<span>Classes starts in " + rem + " mins! #lazyForLife</span>");
                         }
-                        /** else if(j==5 && k==0) {
+                        else if(j==5 && (k==0 || k==1) {
 
                         }
-                        **/
                         else {
                             injectStatus("<span>Break Period. #haveMercyOnUs</span>");
                             $('tr').each(function() {
