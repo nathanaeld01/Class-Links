@@ -22,8 +22,8 @@ $(document).ready(function() {
         }
 
         /*** Week-End OR Classes Ended ***/
-        if(currTime > period[4][1]) {
-            if(day == 0 || day == 6) {
+        if(currTime > period[5][1]) {
+            if(day == 0) {
                 injectStatus("<span>Weekend! #godHeardUs</span>");
                 clearInterval(checking);
             }
@@ -35,7 +35,7 @@ $(document).ready(function() {
                 clearInterval(checking);
             }
         }
-        if (currTime <= period[0][0]-600) {
+        if (currTime <= period[0][0]-1200) {
             injectStatus("<span>Classes haven't started! #meh</span>");
         }
 
