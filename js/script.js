@@ -1,6 +1,5 @@
 $(document).ready(function() {
     checkWeek();
-    checkTable();
     var checking = setInterval(function() {
         var secs = new Date().getSeconds();
         if(secs % 10 == 0) {
@@ -9,21 +8,40 @@ $(document).ready(function() {
             checkTable();
         }
     }, 1000);
+    var holi = false;
     $(window).focus(function() {
-        checkTable();
         checkWeek();
     });
+    function injectStatus(statusText) {
+        $('.status').html($('.status').text().replace($('.status').text(), statusText));
+    }
     function checkWeek() {
-        var date = new Date();
-        var day = date.getDay();
-        var dom = date.getDate();
-        var w = 0;
-        while(dom - 7 > 0) {
-            w++;
-            dom = dom - 7;
+        var d = new Date();
+        var getTot = daysInMonth(d.getMonth(), d.getFullYear()); //Get total days in a month
+        var sat = new Array();   //Declaring array for inserting Saturdays
+
+        for(var i=1;i<=getTot;i++){    //looping through days in month
+            var newDate = new Date(d.getFullYear() ,d.getMonth(),i)
+            if(newDate.getDay()==6){   //if Saturday
+                sat.push(i);
+            }
         }
-        if(w+1 == 2 || w+1 == 4) {
+        console.log(sat);
+        function daysInMonth(month,year) {
+            return new Date(year, month, 0).getDate();
+        }
+        var week = d.getDate();
+        var fweek = week + (6-d.getDay());
+        console.log(week);
+        console.log(fweek);
+        if((sat[1] >= week && sat[1] <= fweek) || (sat[3] >= week && sat[3] <= fweek)) {
             $('.day').eq(5).remove();
+            if(true && d.getDay()==6) {
+                holi = true;
+            }
+        }
+        else {
+            checkTable();
         }
     }
     function checkTable() {
@@ -32,13 +50,9 @@ $(document).ready(function() {
         var period = [[28800, 31200], [32400, 34800], [36000, 38400], [39600, 42000], [43200, 45600], [50400, 52800]];
         var day = date.getDay();
 
-        function injectStatus(statusText) {
-            $('.status').html($('.status').text().replace($('.status').text(), statusText));
-        }
-
         /*** Week-End OR Classes Ended ***/
         if(currTime > period[5][1]) {
-            if(day == 0) {
+            if(day == 0 || holi == true) {
                 injectStatus("<span>Weekend! #godHeardUs</span>");
                 clearInterval(checking);
             }
