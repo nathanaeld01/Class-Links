@@ -36,12 +36,16 @@ $(document).ready(function() {
             }
         }
         if (currTime <= period[0][0]-1200) {
-            injectStatus("<span>Classes haven't started! #meh</span>");
+            var timeMin = date.getHours() * 60 + date.getMinutes();
+            if((timeMin <= 480) {
+                var rem = 480 - timeMin;
+                injectStatus("<span>Classes starts in " + rem + " mins! #lazyForLife</span>");
+            }
         }
 
         var i, j, k = 0;
         /*** Checking Time and Updating the Table ***/
-        for(i = 1; i < 6; i++) {
+        for(i = 1; i < 7; i++) {
             if(i == day) {
                 for(j = 0; j < 6; j++) {
                     if(currTime >= period[j][k] && currTime <= period[j][k+1]) {
@@ -52,11 +56,6 @@ $(document).ready(function() {
                         injectStatus("<span>Class is going on! #sleepWell</span>");
                     }
                     else if(currTime >= period[j][k]-1200 && currTime <= period[j][k]) {
-                        var timeMin = date.getHours() * 60 + date.getMinutes();
-                        if((j==0 && k==0) && timeMin <= 480) {
-                            var rem = 480 - timeMin;
-                            injectStatus("<span>Classes starts in " + rem + " mins! #lazyForLife</span>");
-                        }
                         if(j==5 && (k==0 || k==1)) {
 
                         }
