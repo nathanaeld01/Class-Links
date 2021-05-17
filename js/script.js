@@ -1,4 +1,5 @@
 $(document).ready(function() {
+    checkWeek();
     checkTable();
     var checking = setInterval(function() {
         var secs = new Date().getSeconds();
@@ -10,7 +11,21 @@ $(document).ready(function() {
     }, 1000);
     $(window).focus(function() {
         checkTable();
+        checkWeek();
     });
+    function checkWeek() {
+        var date = new Date();
+        var day = date.getDay();
+        var dom = date.getDate();
+        var w = 0;
+        while(dom - 7 > 0) {
+            w++;
+            dom = dom - 7;
+        }
+        if(w+1 == 2 || w+1 == 4) {
+            $('.day').eq(5).remove();
+        }
+    }
     function checkTable() {
         var date = new Date();
         var currTime = (date.getHours() * 60 + date.getMinutes()) * 60 + date.getSeconds();
