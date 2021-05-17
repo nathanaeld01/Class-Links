@@ -37,7 +37,7 @@ $(document).ready(function() {
         }
         if (currTime <= period[0][0]-1200) {
             var timeMin = date.getHours() * 60 + date.getMinutes();
-            if((timeMin <= 480) {
+            if(timeMin <= 480) {
                 var rem = 480 - timeMin;
                 injectStatus("<span>Classes starts in " + rem + " mins! #lazyForLife</span>");
             }
