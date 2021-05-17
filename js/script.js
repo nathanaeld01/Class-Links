@@ -40,9 +40,7 @@ $(document).ready(function() {
                 holi = true;
             }
         }
-        else {
-            checkTable();
-        }
+        checkTable();
     }
     function checkTable() {
         var date = new Date();
