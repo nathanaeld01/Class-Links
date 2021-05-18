@@ -26,14 +26,11 @@ $(document).ready(function() {
                 sat.push(i);
             }
         }
-        console.log(sat);
         function daysInMonth(month,year) {
             return new Date(year, month, 0).getDate();
         }
         var week = d.getDate();
         var fweek = week + (6-d.getDay());
-        console.log(week);
-        console.log(fweek);
         if((sat[1] >= week && sat[1] <= fweek) || (sat[3] >= week && sat[3] <= fweek)) {
             $('.day').eq(5).remove();
             if(true && d.getDay()==6) {
