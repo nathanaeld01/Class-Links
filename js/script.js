@@ -65,6 +65,7 @@ $(document).ready(function() {
                 var rem = 480 - timeMin;
                 injectStatus("<span>Classes starts in " + rem + " mins! #lazyForLife</span>");
             }
+            break;
         }
 
         var i, j, k = 0;
