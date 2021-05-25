@@ -82,7 +82,7 @@ $(document).ready(function() {
                             $('.day').eq(day-1).children('td').eq(j).addClass('active');
                             injectStatus("<span>Class is going on! #sleepWell</span>");
                         }
-                        else {
+                        else if(currTime >= period[j][k]-1200 && currTime <= period[j][k]) {
                             injectStatus("<span>Break Period. #haveMercyOnUs</span>");
                             $('tr').each(function() {
                                 $(this).find('td.active').removeClass('active');
