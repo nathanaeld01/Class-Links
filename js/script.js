@@ -65,7 +65,6 @@ $(document).ready(function() {
                 var rem = 480 - timeMin;
                 injectStatus("<span>Classes starts in " + rem + " mins! #lazyForLife</span>");
             }
-            break;
         }
         else {
             var i, j, k = 0;
@@ -96,7 +95,7 @@ $(document).ready(function() {
                 }
             }
         }
-        
+
         /*** Links
         var vp = "<a href='https://meet.google.com/lookup/h2hqw543e7?authuser=0&hs=179' target='_blank'>VP</a>";
         var mn = "<a href='https://meet.google.com/lookup/h2hqw543e7?authuser=0&hs=179' target='_blank'>Mentoring</a>";
