@@ -95,41 +95,5 @@ $(document).ready(function() {
                 }
             }
         }
-
-        /*** Links
-        var vp = "<a href='https://meet.google.com/lookup/h2hqw543e7?authuser=0&hs=179' target='_blank'>VP</a>";
-        var mn = "<a href='https://meet.google.com/lookup/h2hqw543e7?authuser=0&hs=179' target='_blank'>Mentoring</a>";
-        var vpl = "<a href='https://meet.google.com/lookup/h2hqw543e7?authuser=0&hs=179' target='_blank'>VP Lab</a>";
-        var un = "<a href='https://meet.google.com/lookup/g3dqibjtfx' target='_blank'>UNIX</a>";
-        var unl = "<a href='https://meet.google.com/lookup/g3dqibjtfx' target='_blank'>UNIX Lab</a>";
-        var pd = "<a href='https://meet.google.com/lookup/eoldjkkpij?authuser=0&hs=179' target='_blank'>PD</a>";
-        var or = "<a href='https://meet.google.com/lookup/aqo7vvtiwi' target='_blank'>OR</a>";
-        var ge = "<a href='https://meet.google.com/lookup/djz3qz643d' target='_blank'>GE</a>";
-        var la = "<a href='https://meet.google.com/lookup/hzs52xaobw?authuser=0&hs=179' target='_blank'>AE</a> | <a href='https://meet.google.com/lookup/cyce7hdeke?authuser=0&hs=179' target='_blank'>Hindi</a>";
-        ***/
-
-        /*** Fetching and Pushing Links
-        var text, atrb, vari;
-        $('.day').each(function() {
-            $('td').each(function() {
-                if($(this).hasClass('active') || $(this).hasClass('booting')) {
-                    atrb = $(this).attr('class').split(' ')[0];
-                    switch (atrb) {
-                        case 'un': vari = un; break;
-                        case 'unl': vari = unl; break;
-                        case 'or': vari = or; break;
-                        case 'mn': vari = mn; break;
-                        case 'vp': vari = vp; break;
-                        case 'vpl': vari = vpl; break;
-                        case 'ge': vari = ge; break;
-                        case 'la': vari = la; break;
-                        case 'pd': vari = pd; break;
-                    }
-                    text = $(this).text();
-                    $(this).html(text.replace(text, vari));
-                }
-            });
-        });
-        ***/
     }
 });
