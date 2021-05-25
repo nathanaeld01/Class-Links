@@ -66,6 +66,9 @@ $(document).ready(function() {
                 injectStatus("<span>Classes starts in " + rem + " mins! #lazyForLife</span>");
             }
         }
+        else if (currTime >= period[4][1] && currTime <= period[5][0]) {
+            injectStatus("<span>Break period. #haveMercyOnUs</span>")
+        }
         else {
             var i, j, k = 0;
             /*** Checking Time and Updating the Table ***/
