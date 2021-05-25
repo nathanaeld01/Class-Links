@@ -60,44 +60,43 @@ $(document).ready(function() {
             }
         }
         if (currTime <= period[0][0]-1200) {
-            if(true) {
-                var timeMin = date.getHours() * 60 + date.getMinutes();
-                if(timeMin <= 480) {
-                    var rem = 480 - timeMin;
-                    injectStatus("<span>Classes starts in " + rem + " mins! #lazyForLife</span>");
-                }
-                break;
+            var timeMin = date.getHours() * 60 + date.getMinutes();
+            if(timeMin <= 480) {
+                var rem = 480 - timeMin;
+                injectStatus("<span>Classes starts in " + rem + " mins! #lazyForLife</span>");
             }
+            break;
         }
-
-        var i, j, k = 0;
-        /*** Checking Time and Updating the Table ***/
-        for(i = 1; i < 7; i++) {
-            if(i == day) {
-                for(j = 0; j < 6; j++) {
-                    if(currTime >= period[j][k] && currTime <= period[j][k+1]) {
-                        $('tr').each(function() {
-                            $(this).find('td.booting').removeClass('booting');
-                        });
-                        $('.day').eq(day-1).children('td').eq(j).addClass('active');
-                        injectStatus("<span>Class is going on! #sleepWell</span>");
-                    }
-                    else if(currTime >= period[j][k]-1200 && currTime <= period[j][k]) {
-                        if(j==5 && (k==0 || k==1)) {
-
-                        }
-                        else {
-                            injectStatus("<span>Break Period. #haveMercyOnUs</span>");
+        else {
+            var i, j, k = 0;
+            /*** Checking Time and Updating the Table ***/
+            for(i = 1; i < 7; i++) {
+                if(i == day) {
+                    for(j = 0; j < 6; j++) {
+                        if(currTime >= period[j][k] && currTime <= period[j][k+1]) {
                             $('tr').each(function() {
-                                $(this).find('td.active').removeClass('active');
+                                $(this).find('td.booting').removeClass('booting');
                             });
+                            $('.day').eq(day-1).children('td').eq(j).addClass('active');
+                            injectStatus("<span>Class is going on! #sleepWell</span>");
                         }
-                        $('.day').eq(day-1).children('td').eq(j).addClass('booting');
+                        else if(currTime >= period[j][k]-1200 && currTime <= period[j][k]) {
+                            if(j==5 && (k==0 || k==1)) {
+
+                            }
+                            else {
+                                injectStatus("<span>Break Period. #haveMercyOnUs</span>");
+                                $('tr').each(function() {
+                                    $(this).find('td.active').removeClass('active');
+                                });
+                            }
+                            $('.day').eq(day-1).children('td').eq(j).addClass('booting');
+                        }
                     }
                 }
             }
         }
-
+        
         /*** Links
         var vp = "<a href='https://meet.google.com/lookup/h2hqw543e7?authuser=0&hs=179' target='_blank'>VP</a>";
         var mn = "<a href='https://meet.google.com/lookup/h2hqw543e7?authuser=0&hs=179' target='_blank'>Mentoring</a>";
