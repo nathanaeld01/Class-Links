@@ -42,20 +42,20 @@ $(document).ready(function() {
     function checkTable() {
         var date = new Date();
         var currTime = (date.getHours() * 60 + date.getMinutes()) * 60 + date.getSeconds();
-        var period = [[28800, 31200], [32400, 34800], [36000, 38400], [39600, 42000], [43200, 45600], [50400, 52800]];
+        var period = [[32400, 35400], [35600, 38700], [39900, 42900], [43200, 46200], [48300, 51000], [51300, 54000]];
         var day = date.getDay();
 
         /*** Week-End OR Classes Ended ***/
         if(currTime > period[5][1]) {
             if(day == 0 || holi == true) {
-                injectStatus("<span>Weekend! #godHeardUs</span>");
+                injectStatus("<span>Weekend!</span>");
                 clearInterval(checking);
             }
             else {
                 $('tr').each(function() {
                     $(this).find('td.active').removeClass('active');
                 });
-                injectStatus("<span>Classes are Over! #freedom</span>");
+                injectStatus("<span>Classes are Over!</span>");
                 clearInterval(checking);
             }
         }
@@ -63,11 +63,8 @@ $(document).ready(function() {
             var timeMin = date.getHours() * 60 + date.getMinutes();
             if(timeMin <= 480) {
                 var rem = 480 - timeMin;
-                injectStatus("<span>Classes starts in " + rem + " mins! #lazyForLife</span>");
+                injectStatus("<span>Classes starts in " + rem + " mins!</span>");
             }
-        }
-        else if (currTime >= period[4][1] && currTime < period[5][0]) {
-            injectStatus("<span>Break period. #haveMercyOnUs</span>")
         }
         else {
             var i, j, k = 0;
@@ -76,18 +73,8 @@ $(document).ready(function() {
                 if(i == day) {
                     for(j = 0; j < 6; j++) {
                         if(currTime >= period[j][k] && currTime <= period[j][k+1]) {
-                            $('tr').each(function() {
-                                $(this).find('td.booting').removeClass('booting');
-                            });
                             $('.day').eq(day-1).children('td').eq(j).addClass('active');
-                            injectStatus("<span>Class is going on! #sleepWell</span>");
-                        }
-                        else if(currTime >= period[j][k]-1200 && currTime <= period[j][k]) {
-                            injectStatus("<span>Break Period. #haveMercyOnUs</span>");
-                            $('tr').each(function() {
-                                $(this).find('td.active').removeClass('active');
-                            });
-                            $('.day').eq(day-1).children('td').eq(j).addClass('booting');
+                            injectStatus("<span>Class is going on!</span>");
                         }
                     }
                 }
